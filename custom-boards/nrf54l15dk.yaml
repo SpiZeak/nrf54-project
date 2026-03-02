@@ -1,0 +1,4 @@
+boards:
+  nrf54l15dk:
+    chip: nrf54l15
+    flags: []

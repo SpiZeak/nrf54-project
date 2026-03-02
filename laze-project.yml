@@ -1,0 +1,34 @@
+imports:
+  - git:
+      url: https://github.com/ariel-os/ariel-os
+      tag: v0.3.0
+    dldir: ariel-os
+
+apps:
+  - name: nrf54l15-app
+
+contexts:
+  - name: armv8m.main-eabihf
+    selects:
+      - armv8m.main_eabihf
+
+  - name: nrf54l15
+    parent: nrf
+    provides:
+      - has_hwrng
+      - has_storage_support
+
+  - name: nrf54l15dk_board
+    parent: nrf54l15
+    selects:
+      - cortex-m33f
+    env:
+      PROBE_RS_CHIP: nRF54L15
+      PROBE_RS_PROTOCOL: swd
+      OPENOCD_ARGS:
+        - "-f interface/cmsis-dap.cfg"
+        - "-f target/nrf54.cfg"
+
+builders:
+  - name: nrf54l15dk
+    parent: nrf54l15dk_board
