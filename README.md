@@ -1,11 +1,11 @@
 [![Book][book-badge]][documentation-mdbook]
 [![Documentation][rustdoc-badge]][documentation-dev-rustdoc]
 
-## SpiZeak Fork
+## Project Overview
 
 This fork adds the **NRF54L15DK** board by running `python patch.py`.
 Currently working with [this](https://www.aliexpress.com/item/1005008847491389.html?spm=a2g0o.order_list.order_list_main.34.75061802ixCvKU) board
-
+<br><br>
 ### Ariel OS
 
 Ariel OS builds on top of existing projects from the Embedded Rust ecosystem, including [Embassy](https://github.com/embassy-rs/embassy), [esp-hal](https://github.com/esp-rs/esp-hal), [defmt](https://github.com/knurling-rs/defmt), [probe-rs](https://github.com/probe-rs/probe-rs), [sequential-storage](https://github.com/tweedegolf/sequential-storage), and [embedded-test](https://github.com/probe-rs/embedded-test).
