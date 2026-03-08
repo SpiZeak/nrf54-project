@@ -1,13 +1,21 @@
 #![no_main]
 #![no_std]
 
-use ariel_os::debug::{exit, log::info, ExitCode};
+use ariel_os_boards::pins;
 
-#[ariel_os::task(autostart)]
-async fn main() {
-    info!(
-        "Hello from main()! Running on a {} board.",
-        ariel_os::buildinfo::BOARD
-    );
-    exit(ExitCode::SUCCESS);
+use ariel_os::{
+    debug::log::info,
+    gpio::{Level, Output},
+    time::Timer,
+};
+
+#[ariel_os::task(autostart, peripherals)]
+async fn blinky(peripherals: pins::LedPeripherals) {
+    let mut led0 = Output::new(peripherals.led0, Level::Low);
+
+    loop {
+        led0.toggle();
+        Timer::after_millis(500).await;
+        info!("blink tick");
+    }
 }

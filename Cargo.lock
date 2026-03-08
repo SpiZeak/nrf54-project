@@ -113,13 +113,13 @@ dependencies = [
  "embassy-nrf",
  "embassy-stm32",
  "embassy-sync 0.7.2",
+ "embassy-time",
+ "embassy-time-queue-utils",
  "embedded-hal 1.0.0",
  "embedded-hal-async",
  "embedded-io 0.6.1",
  "embedded-io-async 0.6.1",
- "heapless",
  "linkme",
- "once_cell",
  "portable-atomic",
  "static_cell",
 ]
@@ -148,12 +148,15 @@ dependencies = [
  "cfg-if",
  "critical-section",
  "embassy-executor",
+ "embassy-time",
+ "embassy-time-driver",
+ "embassy-time-queue-utils",
  "embedded-hal 1.0.0",
  "embedded-hal-async",
  "esp-bootloader-esp-idf",
  "esp-hal",
  "esp-rom-sys",
- "once_cell",
+ "esp-sync",
  "paste",
  "static_cell",
 ]
@@ -525,9 +528,9 @@ checksum = "0d8a42181e0652c2997ae4d217f25b63c5337a52fd2279736e97b832fa0a3cff"
 
 [[package]]
 name = "const-str"
-version = "0.7.1"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0664d2867b4a32697dfe655557f5c3b187e9b605b38612a748e5ec99811d160"
+checksum = "18f12cc9948ed9604230cdddc7c86e270f9401ccbe3c2e98a4378c5e7632212f"
 
 [[package]]
 name = "const_panic"
@@ -1065,8 +1068,7 @@ dependencies = [
 [[package]]
 name = "embassy-usb-synopsys-otg"
 version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "288751f8eaa44a5cf2613f13cee0ca8e06e6638cb96e897e6834702c79084b23"
+source = "git+https://github.com/ariel-os/embassy?rev=478df29985c8e0d0ff2e915440c8ca15e36f4403#478df29985c8e0d0ff2e915440c8ca15e36f4403"
 dependencies = [
  "critical-section",
  "embassy-sync 0.7.2",
@@ -1920,16 +1922,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff76201f031d8863c38aa7f905eca4f53abbfa15f609db4277d44cd8938f33fe"
 dependencies = [
  "memchr",
-]
-
-[[package]]
-name = "once_cell"
-version = "1.21.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
-dependencies = [
- "critical-section",
- "portable-atomic",
 ]
 
 [[package]]
